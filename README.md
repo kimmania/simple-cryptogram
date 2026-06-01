@@ -36,7 +36,7 @@ Open the URL shown in the terminal (usually `http://localhost:5173/simple-crypto
 Pushes to `main` deploy automatically via GitHub Actions.
 
 1. Enable **GitHub Pages** → Source: **GitHub Actions**
-2. Live site: `https://<username>.github.io/simple-cryptogram/`
+2. Live site: `https://kimmania.github.io/simple-cryptogram/`
 
 ## Install on iPhone or iPad
 
