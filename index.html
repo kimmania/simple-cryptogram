@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Cryptogram" />
+    <meta name="theme-color" content="#1a1a2e" />
+    <meta
+      name="description"
+      content="Mobile-first cryptogram puzzles with four difficulty levels and three lives."
+    />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <title>Simple Cryptogram</title>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <h1 class="title">Simple Cryptogram</h1>
+        <div class="status-bar">
+          <span id="mistakes" class="mistakes" aria-live="polite">Mistakes: 0/3</span>
+          <span id="puzzle-id" class="puzzle-id"></span>
+        </div>
+      </header>
+
+      <section class="controls" aria-label="Game controls">
+        <label class="difficulty-label">
+          <span class="sr-only">Difficulty</span>
+          <select id="difficulty" class="difficulty-select">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+            <option value="expert">Expert</option>
+          </select>
+        </label>
+        <button type="button" id="reset" class="btn">Reset</button>
+        <button type="button" id="new-game" class="btn btn-primary">New Game</button>
+      </section>
+
+      <div id="win-banner" class="banner win-banner hidden" role="status">Puzzle solved!</div>
+      <div id="lost-banner" class="banner lost-banner hidden" role="status">
+        Too many mistakes — reset to try again.
+      </div>
+
+      <main class="game-area">
+        <div id="puzzle-scroll" class="puzzle-scroll">
+          <div id="puzzle" class="puzzle" aria-label="Cryptogram puzzle"></div>
+        </div>
+        <div id="keyboard" class="keyboard" role="group" aria-label="Letter keyboard"></div>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
