@@ -21,12 +21,82 @@
   <body>
     <div id="app">
       <header class="header">
-        <h1 class="title">Simple Cryptogram</h1>
+        <div class="header-start">
+          <h1 class="title">Simple Cryptogram</h1>
+          <button
+            type="button"
+            id="help-btn"
+            class="btn btn-icon"
+            aria-haspopup="dialog"
+            aria-controls="help-dialog"
+          >
+            ?
+          </button>
+        </div>
         <div class="status-bar">
           <span id="mistakes" class="mistakes" aria-live="polite">Mistakes: 0/3</span>
           <span id="puzzle-id" class="puzzle-id"></span>
         </div>
       </header>
+
+      <dialog id="help-dialog" class="help-dialog" aria-labelledby="help-title">
+        <div class="help-dialog-inner">
+          <header class="help-header">
+            <h2 id="help-title" class="help-title">How to play</h2>
+            <button type="button" id="help-close" class="btn btn-icon help-close" aria-label="Close help">
+              ×
+            </button>
+          </header>
+          <div class="help-body">
+            <p>
+              Each puzzle is a famous quote in secret code. Every letter A–Z has been swapped for a
+              different letter. Your job is to figure out the original quote.
+            </p>
+            <h3 class="help-subtitle">Reading the puzzle</h3>
+            <ul>
+              <li>
+                <strong>Top</strong> — encrypted letter (what you see in the clue).
+              </li>
+              <li>
+                <strong>Middle</strong> — your guess for that letter.
+              </li>
+              <li>
+                <strong>Bottom</strong> — number shared by every box with the same encrypted letter.
+              </li>
+            </ul>
+            <p>
+              Punctuation and spaces are already correct and cannot be selected.
+            </p>
+            <h3 class="help-subtitle">Making a guess</h3>
+            <ol>
+              <li>Tap any letter box in the quote (all matching numbers highlight).</li>
+              <li>Tap a letter on the keyboard to assign it to that number.</li>
+              <li>Tap <strong>Clear</strong> to remove your guess for the selected number.</li>
+            </ol>
+            <p>
+              Each plaintext letter A–Z can only be used once. If a letter is already assigned
+              elsewhere, that key is disabled until you clear it.
+            </p>
+            <h3 class="help-subtitle">Givens, mistakes, and difficulty</h3>
+            <ul>
+              <li>
+                <strong>White guesses</strong> are given at the start and cannot be changed.
+              </li>
+              <li>
+                You have <strong>three mistakes</strong>. A wrong guess counts once per number; after
+                three, the puzzle ends — use <strong>Reset</strong> to try the same quote again.
+              </li>
+              <li>
+                <strong>Easy</strong> reveals many letters; <strong>Expert</strong> reveals only one
+                starter letter. Change difficulty before starting a <strong>New Game</strong>.
+              </li>
+            </ul>
+            <p class="help-footer-note">
+              Solve every number correctly to win. Your progress is saved automatically.
+            </p>
+          </div>
+        </div>
+      </dialog>
 
       <section class="controls" aria-label="Game controls">
         <label class="difficulty-label">

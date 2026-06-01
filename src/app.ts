@@ -19,6 +19,7 @@ import {
   updateMistakes,
   updatePuzzleId,
 } from './ui/controls';
+import { bindHelp } from './ui/help';
 import { bindKeyboardHandlers, buildKeyboard, updateKeyboard } from './ui/keyboard';
 import { bindPuzzleClick, createPuzzleView, renderPuzzle } from './ui/puzzle-view';
 
@@ -30,6 +31,7 @@ export class CryptogramApp {
 
   async init(): Promise<void> {
     buildKeyboard();
+    bindHelp();
     bindPuzzleClick(this.puzzleView, (keyIndex) => this.selectKey(keyIndex));
     bindControlHandlers({
       onNewGame: () => void this.newGame(),
