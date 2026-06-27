@@ -27,10 +27,14 @@ export function showWinBanner(show: boolean, attribution?: string): void {
   const banner = document.getElementById('win-banner');
   if (!banner) return;
   banner.classList.toggle('hidden', !show);
+  const textEl = banner.querySelector('.win-text') as HTMLElement | null;
+  if (!textEl) return;
   if (show && attribution) {
-    banner.textContent = `Solved! ${attribution}`;
+    textEl.textContent = `Solved! ${attribution}`;
   } else if (show) {
-    banner.textContent = 'Puzzle solved!';
+    textEl.textContent = 'Puzzle solved!';
+  } else {
+    textEl.textContent = 'Puzzle solved!';
   }
 }
 
