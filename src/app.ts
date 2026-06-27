@@ -38,6 +38,8 @@ export class CryptogramApp {
       onReset: () => void this.handleReset(),
       onDifficultyChange: () => void this.newGame(),
     });
+
+    document.getElementById('play-again')?.addEventListener('click', () => void this.newGame());
     bindKeyboardHandlers({
       onLetter: (letter) => this.handleLetter(letter),
       onClear: () => this.handleClear(),
